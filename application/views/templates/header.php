@@ -108,7 +108,7 @@
               
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>home" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
                          <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>about" aria-expanded="false"><i class="mdi mdi-information-outline"></i><span class="hide-menu">About</span></a></li>
                         
                     </ul>
