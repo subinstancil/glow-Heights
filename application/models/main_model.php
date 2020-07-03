@@ -51,7 +51,7 @@
 		}
 
 		function get_college($course, $place){
-			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id`='.$course.') c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id';
+			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id`='.$course.') c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by college_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
@@ -63,6 +63,7 @@
                     <td>'.$row->fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
+                    <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -71,7 +72,7 @@
 		}
 
 		function get_college_stream_place($place, $stream){
-			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
+			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by course_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
@@ -83,6 +84,7 @@
                     <td>'.$row->fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
+                    <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -91,7 +93,7 @@
 		}
 
 		function get_college_course($course){
-			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE  `course_id` = '.$course.') c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by college_name';
+			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE  `course_id` = '.$course.') c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by college_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
@@ -103,6 +105,7 @@
                     <td>'.$row->fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
+                    <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -111,7 +114,7 @@
 		}
 
 		function get_college_place($place){
-			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
+			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by course_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
@@ -123,6 +126,7 @@
                     <td>'.$row->fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
+                    <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -131,7 +135,7 @@
 		}
 
 		function get_college_stream($stream){
-			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
+			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by course_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
@@ -143,6 +147,7 @@
                     <td>'.$row->fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
+                    <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}

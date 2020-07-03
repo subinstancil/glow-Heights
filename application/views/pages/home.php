@@ -95,6 +95,7 @@
                                                 <th>Fees</th>
                                                 <th>Duration</th>
                                                 <th>Qualification</th>
+                                                <th>University</th>
                                             </tr>
                                         </thead>
                                         <tbody id="mainresulttbody">

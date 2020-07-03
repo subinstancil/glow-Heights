@@ -58,7 +58,7 @@
 				}
 
 				else{
-					echo "<tr><td>errrrrrrrrrrrrrr</td></tr>";
+					echo '<tr><td colspan="7"><center>No Records</center></td></tr>';
 				}
 
 				
