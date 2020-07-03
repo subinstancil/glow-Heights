@@ -146,7 +146,7 @@
                 e.preventDefault(); // avoid to execute the actual submit of the form.
 
                 var form = $(this);
-            
+                // alert(form.serialize());
                 $.ajax({
                        type: "POST",
                        url: "<?php echo base_url();?>/fetch_details",

@@ -70,7 +70,7 @@
 			return $output;
 		}
 
-		function get_college_stream($place, $stream){
+		function get_college_stream_place($place, $stream){
 			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
 			$query = $this->db->query($sql);
 			$x = 1;
@@ -109,5 +109,46 @@
 
 			return $output;
 		}
+
+		function get_college_place($place){
+			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
+			$query = $this->db->query($sql);
+			$x = 1;
+			$output='';
+			foreach ($query->result() as $row) {
+				$output .= '<tr>
+                    <td>'.$x.'</td>
+                    <td>'.$row->college_name.'</td>
+                    <td>'.$row->course_name.'</td>
+                    <td>'.$row->fees.'</td>
+                    <td>'.$row->duration.' Years</td>
+                    <td>'.$row->qualification.'</td>
+                </tr>';
+                $x=$x+1;
+			}
+
+			return $output;
+		}
+
+		function get_college_stream($stream){
+			$sql='select college_name,course_name,duration,fees,qualification from (SELECT * FROM `college_courses` WHERE `course_id` IN (select course_id from courses where stream_id = '.$stream.')) c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id order by course_name';
+			$query = $this->db->query($sql);
+			$x = 1;
+			$output='';
+			foreach ($query->result() as $row) {
+				$output .= '<tr>
+                    <td>'.$x.'</td>
+                    <td>'.$row->college_name.'</td>
+                    <td>'.$row->course_name.'</td>
+                    <td>'.$row->fees.'</td>
+                    <td>'.$row->duration.' Years</td>
+                    <td>'.$row->qualification.'</td>
+                </tr>';
+                $x=$x+1;
+			}
+
+			return $output;
+		}
+
 	}
  ?>

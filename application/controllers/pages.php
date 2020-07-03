@@ -33,22 +33,35 @@
 		// }
 
 		function fetch_details(){
-			if($this->input->post('stream','place','course')){
-				if($this->input->post('course') == '' and $this->input->post('place') != '' and $this->input->post('stream') != '')
+			
+				if($this->input->post('course') == '' && $this->input->post('place') != '' && $this->input->post('stream') == '')
 				{
-					echo $this->main_model->get_college_stream($this->input->post('place'),$this->input->post('stream'));
+					echo $this->main_model->get_college_place($this->input->post('place'));
+				}
+				elseif($this->input->post('course') == '' && $this->input->post('place') != '' && $this->input->post('stream') != '')
+				{
+					echo $this->main_model->get_college_stream_place($this->input->post('place'),$this->input->post('stream'));
 				}
 
-				if($this->input->post('course') != '' and $this->input->post('place') != '' and $this->input->post('stream') != '')
+				elseif($this->input->post('course') != '' && $this->input->post('place') != '' && $this->input->post('stream') != '')
 				{
 					echo $this->main_model->get_college($this->input->post('course'),$this->input->post('place'));
 				}
 
-				if($this->input->post('course') != '' and $this->input->post('place') == '' and $this->input->post('stream') != '')
+				elseif($this->input->post('course') != '' && $this->input->post('place') == '' && $this->input->post('stream') != '')
 				{
 					echo $this->main_model->get_college_course($this->input->post('course'));
 				}
-			}
+				elseif($this->input->post('stream') != '' && $this->input->post('place') == '' && $this->input->post('course') == '')
+				{
+					echo $this->main_model->get_college_stream($this->input->post('stream'));
+				}
+
+				else{
+					echo "<tr><td>errrrrrrrrrrrrrr</td></tr>";
+				}
+
+				
 		}
 
 	}
