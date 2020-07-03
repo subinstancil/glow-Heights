@@ -30,7 +30,7 @@
                                         
                                         <div class="form-group">
 
-                                            <div class="col-md-4 float-left mb-3 mb-md-0">
+                                            <div class="col-md-3 float-left mb-3 mb-md-0">
                                                 <select class="form-control" name="stream" id="stream">
                                                     <option value="" selected>Stream</option>
                                                     <?php foreach ($streams as $stream): ?>
@@ -39,19 +39,26 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-4 float-left mb-3 mb-md-0">
+                                            <div class="col-md-3 float-left mb-3 mb-md-0">
                                                 <select class="form-control" name="course" id="course" >
                                                     <option value="" selected>Course</option>
                                                     
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-4 float-left mb-3 mb-md-0">
+                                            <div class="col-md-3 float-left mb-3 mb-md-0">
+                                                <select class="form-control" name="state" id="state">
+                                                    <option value="" selected>State</option>
+                                                    <?php foreach ($state as $pl): ?>
+                                                        <option value="<?php echo $pl['state_id']; ?>"><?php echo $pl['state_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-3 float-left mb-3 mb-md-0">
                                                 <select class="form-control" name="place" id="place">
                                                     <option value="" selected>Place</option>
-                                                    <?php foreach ($place as $pl): ?>
-                                                        <option value="<?php echo $pl['district_id']; ?>"><?php echo $pl['district_name']; ?></option>
-                                                    <?php endforeach ?>
+    
                                                 </select>
                                             </div>
 
@@ -133,6 +140,25 @@
                 }
                 if(stream_id == ''){
                      $('#course').html("<option value='' selected>Course</option>");
+                }
+            });
+
+            $('#state').change(function(){
+                var state_id = $('#state').val();
+                if(state_id != '')
+                {
+                    $.ajax({
+                        url:"<?php echo base_url();?>/fetch_place",
+                        method:"POST",
+                        data:{state_id:state_id},
+                        success:function(data)
+                        {
+                            $('#place').html(data);
+                        }
+                    })
+                }
+                if(state_id == ''){
+                     $('#place').html("<option value='' selected>Place</option>");
                 }
             });
 

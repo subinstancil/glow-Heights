@@ -59,7 +59,7 @@
                 <!-- Logo -->
                 <!-- ============================================================== -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="<?php echo base_url();?>">
                         <!-- Logo icon --><b>
                             <img src="<?php echo base_url();?>assets/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
                         </b>
@@ -97,20 +97,42 @@
                         <!-- Profile -->
                         <!-- ============================================================== -->
                         <li class="nav-item">
-                            <a class="nav-link waves-effect waves-dark" href="#"><img src="<?php echo base_url();?>assets/assets/images/users/1.jpg" alt="user" class="profile-pic" /></a>
+                            <button type="button" class="btn" style="background-color: #ffff;" data-toggle="modal" data-target="#exampleModal"><a class="nav-link waves-effect waves-dark"><img src="<?php echo base_url();?>assets/assets/images/users/2.png" alt="user" class="profile-pic" /></a></button>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
        
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Log out?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <!-- <div class="modal-body">
+                ...
+              </div> -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" onclick="window.location='<?php echo base_url("pages/logout");?>'" >logout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         <aside class="left-sidebar">
            
             <div class="scroll-sidebar">
               
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
-                        <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>pages" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
                          <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>about" aria-expanded="false"><i class="mdi mdi-information-outline"></i><span class="hide-menu">About</span></a></li>
                         
                     </ul>

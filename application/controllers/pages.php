@@ -1,10 +1,21 @@
 <?php
 	class Pages extends CI_Controller {
+		function __construct()
+		{
+			parent::__construct();
+			if(!$this->session->userdata('admin'))
+				redirect('login');
+		}
+		function logout()
+		{
+			$this->session->unset_userdata('admin');
+			$this->load->view('login');
+		}
 		public function index(){
 
 			
 			$data['streams'] = $this->main_model->get_stream();
-			$data['place'] = $this->main_model->fetch_place();
+			$data['state'] = $this->main_model->fetch_state();
 		
 			$this->load->view('templates/header');
 			$this->load->view('pages/home',$data);
@@ -25,12 +36,12 @@
 			}
 		}
 
-		// public function fetch_place(){
-		// 	if($this->input->post('course_id'))
-		// 	{
-		// 		echo $this->main_model->fetch_place();
-		// 	}
-		// }
+		public function fetch_place(){
+			if($this->input->post('state_id'))
+			{
+				echo $this->main_model->fetch_place($this->input->post('state_id'));
+			}
+		}
 
 		function fetch_details(){
 			

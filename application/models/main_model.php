@@ -36,9 +36,9 @@
 			return $output;
 		}
 
-		public function fetch_place(){
-			$this->db->order_by('district_name', 'ASC');
-			$query = $this->db->get('district');
+		public function fetch_state(){
+			$this->db->order_by('state_name', 'ASC');
+			$query = $this->db->get('state');
 			return $query->result_array();
 			
 			// $output = '<option value = "">Place</option>';
@@ -50,24 +50,39 @@
 			// return $output;
 		}
 
+		public function fetch_place($state_id){
+			$this->db->where('state_id', $state_id);
+			$this->db->order_by('district_name', 'ASC');
+			$query = $this->db->get('district');
+			
+			$output = '<option value = "">Place</option>';
+
+			foreach ($query->result() as $row) {
+				$output .= '<option value="'.$row->district_id.'">'.$row->district_name.'</option>';
+			}
+
+			return $output;
+		}
+
 		function get_college($course, $place){
 			$sql='select college_name,course_name,duration,fees,qualification,university_name from (SELECT * FROM `college_courses` WHERE `college_id` IN (select college_id from college where district_id = '.$place.') AND `course_id`='.$course.') c JOIN college cc ON c.college_id = cc.college_id JOIN courses ccc ON c.course_id = ccc.course_id JOIN university u ON cc.university_id = u.university_id order by college_name';
 			$query = $this->db->query($sql);
 			$x = 1;
 			$output='';
 			foreach ($query->result() as $row) {
+				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
                     <td>'.$x.'</td>
                     <td>'.$row->college_name.'</td>
                     <td>'.$row->course_name.'</td>
-                    <td>'.$row->fees.'</td>
+                    <td>'.$fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
                     <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
-
+			if($x == 1){$output='<tr><td colspan="7"><center>No Records</center></td></tr>';}
 			return $output;
 		}
 
@@ -77,18 +92,19 @@
 			$x = 1;
 			$output='';
 			foreach ($query->result() as $row) {
+				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
                     <td>'.$x.'</td>
                     <td>'.$row->college_name.'</td>
                     <td>'.$row->course_name.'</td>
-                    <td>'.$row->fees.'</td>
+                    <td>'.$fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
                     <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
-
+			if($x == 1){$output='<tr><td colspan="7"><center>No Records</center></td></tr>';}
 			return $output;
 		}
 
@@ -98,18 +114,19 @@
 			$x = 1;
 			$output='';
 			foreach ($query->result() as $row) {
+				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
                     <td>'.$x.'</td>
                     <td>'.$row->college_name.'</td>
                     <td>'.$row->course_name.'</td>
-                    <td>'.$row->fees.'</td>
+                    <td>'.$fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
                     <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
-
+			if($x == 1){$output='<tr><td colspan="7"><center>No Records</center></td></tr>';}
 			return $output;
 		}
 
@@ -119,18 +136,19 @@
 			$x = 1;
 			$output='';
 			foreach ($query->result() as $row) {
+				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
                     <td>'.$x.'</td>
                     <td>'.$row->college_name.'</td>
                     <td>'.$row->course_name.'</td>
-                    <td>'.$row->fees.'</td>
+                    <td>'.$fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
                     <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
-
+			if($x == 1){$output='<tr><td colspan="7"><center>No Records</center></td></tr>';}
 			return $output;
 		}
 
@@ -140,18 +158,19 @@
 			$x = 1;
 			$output='';
 			foreach ($query->result() as $row) {
+				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
                     <td>'.$x.'</td>
                     <td>'.$row->college_name.'</td>
                     <td>'.$row->course_name.'</td>
-                    <td>'.$row->fees.'</td>
+                    <td>'.$fees.'</td>
                     <td>'.$row->duration.' Years</td>
                     <td>'.$row->qualification.'</td>
                     <td>'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
-
+			if($x == 1){$output='<tr><td colspan="7"><center>No Records</center></td></tr>';}
 			return $output;
 		}
 
