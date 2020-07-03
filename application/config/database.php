@@ -116,3 +116,25 @@ $db['test'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+
+$db['webhost'] = array(
+	'dsn'	=> '',
+	'hostname' => 'localhost',
+	'username' => 'id14249355_root',
+	'password' => 's/X#n%$~EyX9haMR',
+	'database' => 'id14249355_glowheights',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => FALSE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => TRUE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);

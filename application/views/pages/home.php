@@ -40,23 +40,25 @@
                                             </div>
 
                                             <div class="col-md-4 float-left mb-3 mb-md-0">
-                                                <select class="form-control" name="course" id="course">
-                                                    <option selected>Course</option>
+                                                <select class="form-control" name="course" id="course" >
+                                                    <option value="" selected>Course</option>
                                                     
                                                 </select>
                                             </div>
 
                                             <div class="col-md-4 float-left mb-3 mb-md-0">
                                                 <select class="form-control" name="place" id="place">
-                                                    <option selected>Place</option>
-                                                    
+                                                    <option value="" selected>Place</option>
+                                                    <?php foreach ($place as $pl): ?>
+                                                        <option value="<?php echo $pl['district_id']; ?>"><?php echo $pl['district_name']; ?></option>
+                                                    <?php endforeach ?>
                                                 </select>
                                             </div>
 
 
 
                                         </div>
-                                        <br><br><br> <center>
+                                        <br><br><br> <center class="float-left col-sm-12">
                                         <div class="form-group">
                                             <div class="col-sm-12">
                                                 <button class="btn btn-success">submit</button>
@@ -91,6 +93,8 @@
                                                 <th>College Name</th>
                                                 <th>Course</th>
                                                 <th>Fees</th>
+                                                <th>Duration</th>
+                                                <th>Qualification</th>
                                             </tr>
                                         </thead>
                                         <tbody id="mainresulttbody">
@@ -105,3 +109,57 @@
                 </div>
             </div>
             
+
+
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('#mainresult').hide();
+
+            $('#stream').change(function(){
+                var stream_id = $('#stream').val();
+                if(stream_id != '')
+                {
+                    $.ajax({
+                        url:"<?php echo base_url();?>/fetch_course",
+                        method:"POST",
+                        data:{stream_id:stream_id},
+                        success:function(data)
+                        {
+                            $('#course').html(data);
+                        }
+                    })
+                }
+                if(stream_id == ''){
+                     $('#course').html("<option value='' selected>Course</option>");
+                }
+            });
+
+            
+
+
+
+            $("#mainform").submit(function(e) {
+
+
+
+                e.preventDefault(); // avoid to execute the actual submit of the form.
+
+                var form = $(this);
+            
+                $.ajax({
+                       type: "POST",
+                       url: "<?php echo base_url();?>/fetch_details",
+                       data: form.serialize(), // serializes the form's elements.
+                       success: function(data)
+                       {
+                            $('#mainresulttbody').html(data);
+                            $('#mainresult').show();
+                       }
+                     });
+
+                });
+
+
+        });
+        </script>
