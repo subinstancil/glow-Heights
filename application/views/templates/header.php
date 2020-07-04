@@ -28,6 +28,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" type="text/css" rel="stylesheet">
 
      <script src="<?php echo base_url();?>assets/assets/plugins/jquery/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.2/bootstrap3-typeahead.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -133,6 +134,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>pages" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
+                        <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>college" aria-expanded="false"><i class="mdi mdi-school"></i><span class="hide-menu">College Search</span></a></li>
                          <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>about" aria-expanded="false"><i class="mdi mdi-information-outline"></i><span class="hide-menu">About</span></a></li>
                         
                     </ul>

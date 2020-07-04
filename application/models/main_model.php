@@ -72,13 +72,13 @@
 			foreach ($query->result() as $row) {
 				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
-                    <td>'.$x.'</td>
-                    <td>'.$row->college_name.'</td>
-                    <td>'.$row->course_name.'</td>
-                    <td>'.$fees.'</td>
-                    <td>'.$row->duration.' Years</td>
-                    <td>'.$row->qualification.'</td>
-                    <td>'.$row->university_name.'</td>
+                    <td class="align-middle">'.$x.'</td>
+                    <td class="align-middle">'.$row->college_name.'</td>
+                    <td class="align-middle">'.$row->course_name.'</td>
+                    <td class="trow align-middle">'.$fees.'</td>
+                    <td class="align-middle">'.$row->duration.' Years</td>
+                    <td class="align-middle">'.$row->qualification.'</td>
+                    <td class="align-middle">'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -94,13 +94,13 @@
 			foreach ($query->result() as $row) {
 				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
-                    <td>'.$x.'</td>
-                    <td>'.$row->college_name.'</td>
-                    <td>'.$row->course_name.'</td>
-                    <td>'.$fees.'</td>
-                    <td>'.$row->duration.' Years</td>
-                    <td>'.$row->qualification.'</td>
-                    <td>'.$row->university_name.'</td>
+                    <td class="align-middle">'.$x.'</td>
+                    <td class="align-middle">'.$row->college_name.'</td>
+                    <td class="align-middle">'.$row->course_name.'</td>
+                    <td class="trow align-middle">'.$fees.'</td>
+                    <td class="align-middle">'.$row->duration.' Years</td>
+                    <td class="align-middle">'.$row->qualification.'</td>
+                    <td class="align-middle">'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -116,13 +116,13 @@
 			foreach ($query->result() as $row) {
 				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
-                    <td>'.$x.'</td>
-                    <td>'.$row->college_name.'</td>
-                    <td>'.$row->course_name.'</td>
-                    <td>'.$fees.'</td>
-                    <td>'.$row->duration.' Years</td>
-                    <td>'.$row->qualification.'</td>
-                    <td>'.$row->university_name.'</td>
+                    <td class="align-middle">'.$x.'</td>
+                    <td class="align-middle">'.$row->college_name.'</td>
+                    <td class="align-middle">'.$row->course_name.'</td>
+                    <td class="trow align-middle">'.$fees.'</td>
+                    <td class="align-middle">'.$row->duration.' Years</td>
+                    <td class="align-middle">'.$row->qualification.'</td>
+                    <td class="align-middle">'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -138,13 +138,13 @@
 			foreach ($query->result() as $row) {
 				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
-                    <td>'.$x.'</td>
-                    <td>'.$row->college_name.'</td>
-                    <td>'.$row->course_name.'</td>
-                    <td>'.$fees.'</td>
-                    <td>'.$row->duration.' Years</td>
-                    <td>'.$row->qualification.'</td>
-                    <td>'.$row->university_name.'</td>
+                    <td class="align-middle">'.$x.'</td>
+                    <td class="align-middle">'.$row->college_name.'</td>
+                    <td class="align-middle">'.$row->course_name.'</td>
+                    <td class="trow align-middle">'.$fees.'</td>
+                    <td class="align-middle">'.$row->duration.' Years</td>
+                    <td class="align-middle">'.$row->qualification.'</td>
+                    <td class="align-middle">'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}
@@ -160,13 +160,13 @@
 			foreach ($query->result() as $row) {
 				$fees = str_replace(',', '<br>', $row->fees);
 				$output .= '<tr>
-                    <td>'.$x.'</td>
-                    <td>'.$row->college_name.'</td>
-                    <td>'.$row->course_name.'</td>
-                    <td>'.$fees.'</td>
-                    <td>'.$row->duration.' Years</td>
-                    <td>'.$row->qualification.'</td>
-                    <td>'.$row->university_name.'</td>
+                    <td class="align-middle">'.$x.'</td>
+                    <td class="align-middle">'.$row->college_name.'</td>
+                    <td class="align-middle">'.$row->course_name.'</td>
+                    <td class="trow align-middle">'.$fees.'</td>
+                    <td class="align-middle">'.$row->duration.' Years</td>
+                    <td class="align-middle">'.$row->qualification.'</td>
+                    <td class="align-middle">'.$row->university_name.'</td>
                 </tr>';
                 $x=$x+1;
 			}

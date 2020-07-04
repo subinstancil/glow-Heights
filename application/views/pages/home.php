@@ -86,20 +86,22 @@
                         <div class="card">
                             <div class="card-body">
 
-                                <div class="d-flex">
+                                <div class="d-flex mb-2">
                                     <div>
                                         <h3 class="card-title m-b-5"><span class="lstick"></span>Result</h3>
                                     </div>
                                  </div>
+
+                                <input class="mb-2 float-right mr-2 btn btn-link" type="button" onclick="printDiv('mainresult')" value="Print" style="" />
                                     
-                                 <div class="table-responsive" id="mainresult">
+                                 <div class="table-responsive table-hover" id="mainresult">
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>#</th>
                                                 <th>College Name</th>
                                                 <th>Course</th>
-                                                <th>Fees</th>
+                                                <th class="trow">Fees</th>
                                                 <th>Duration</th>
                                                 <th>Qualification</th>
                                                 <th>University</th>
@@ -189,4 +191,24 @@
 
 
         });
+        </script>
+
+        <script type="text/javascript">
+            function printDiv(divName) {
+             var printContents = document.getElementById(divName).innerHTML;
+
+             var originalContents = document.body.innerHTML;
+
+             document.body.innerHTML = printContents;
+
+            var y = document.getElementsByClassName("trow");
+                var i;
+                for (i = 0; i < y.length; i++) {
+                  y[i].style.width = "40%";
+                }
+
+             window.print();
+
+             document.body.innerHTML = originalContents;
+            }
         </script>
