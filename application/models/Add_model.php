@@ -17,7 +17,7 @@ class Add_model extends CI_Model{
 	 		return "Stream added";
 	 	}
 	 	else{
-	 		echo "error";
+	 		return "error";
 	 	}
 	 }
 
@@ -30,6 +30,16 @@ class Add_model extends CI_Model{
 	 		echo "error";
 	 	}
 	 }
+	 function addcolcourse($college,$course,$fees){
+	 	$sql='INSERT INTO `college_courses`(`college_id`, `course_id`, `fees`) VALUES ((select college_id from college where college_name = "'.$college.'"),'.$course.',"'.$fees.'")';
+	 	// $data = array('college_name'=>$name,'district_id'=>$district,'university_id'=>$university);
+	 	if($this->db->query($sql)){
+	 		return "Course added";
+	 	}
+	 	else{
+	 		return "error";
+	 	}
+	 }
 
 	 function addcourse($course,$stream,$duration,$qualification,$after){
 	 	$data = array('course_name'=>$course,'stream_id'=>$stream,'duration'=>$duration,'qualification'=>$qualification,'after'=>$after);
@@ -37,7 +47,7 @@ class Add_model extends CI_Model{
 	 		return "Course Added";
 	 	}
 	 	else{
-	 		echo "error";
+	 		return "error";
 	 	}
 	 }
 

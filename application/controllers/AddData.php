@@ -46,12 +46,12 @@
 		}
 
 		function add_col_course(){
-			// if($this->input->post('course') != '' && $this->input->post('stream') != ''){
-			// 	echo $this->add_model->addcourse($this->input->post('course'),$this->input->post('stream'),$this->input->post('duration'),$this->input->post('qualification'),$this->input->post('after'));
-			// }
-			// else{
+			if($this->input->post('college') != '' && $this->input->post('course') != '' && $this->input->post('fees') != ''){
+				echo $this->add_model->addcolcourse($this->input->post('college'),$this->input->post('course'),$this->input->post('fees'));
+			}
+			else{
 				echo "Please fill all the fields";
-			// }
+			}
 		}
 
 		function fetch_state(){
