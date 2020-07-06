@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'login/';
 $route['login'] = 'login/index';
+$route['add'] = 'adddata/index';
 $route['college'] = 'college/index';
 $route['pages'] = 'pages/index';
 $route['(:any)'] = 'pages/$1';

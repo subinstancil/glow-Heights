@@ -7,7 +7,7 @@
 
                                 <div class="d-flex" id="topSection">
                                     <div>
-                                        <h3 class="card-title mb-3"><span class="lstick"></span>College Search </h3>
+                                        <h3 class="card-title mb-3"><span class="lstick"></span>Add College</h3>
                                     </div>
                                  </div>
 

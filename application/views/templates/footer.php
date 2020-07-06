@@ -1,3 +1,6 @@
+<a href="#topSection"><button class="btn btn-default" style="position: fixed; bottom: 30px; right: 30px; z-index: 9999999">
+                <i class="fa fa-arrow-up"></i>
+              </button></a>
   </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -36,7 +39,6 @@
     <!-- This page plugins -->
     <!-- ============================================================== -->
     
-
 
    
 </body>
