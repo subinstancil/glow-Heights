@@ -1,59 +1,245 @@
  
 
                <div class="row">
-                    <div class="col-lg-12 col-md-12">
-                        <div class="card">
-                            <div class="card-body">
+                    <div class="col-lg-2 col-md-2">
+                                <button class="btn btn-secondary mb-3" id="university">Add New University</button>
+                </div>
 
-                                <div class="d-flex" id="topSection">
-                                    <div>
-                                        <h3 class="card-title mb-3"><span class="lstick"></span>Add College</h3>
-                                    </div>
-                                 </div>
+                <div class="col-lg-2 col-md-2">
+                       
+                                <button class="btn btn-secondary mb-3" id="college">Add New College</button>
+                        
+                </div>
 
-                                 <form class="form-horizontal" name="mainform" id="mainform">
-                                 	<div class="form-group">
-                                 		<div class="col-md-6 auto-widget float-left">
-                                 			<input type="text" placeholder="Enter College Name" name="college" class="form-control form-control-line" id="college">
-                                 		</div>
-                                 		<div class="col-md-6 float-left">
-                                 			<input type="submit" name="" value="Search" class="btn btn-primary">
-                                 		</div>
-                                 	</div>
-                                 </form>
-                            
-                            </div>
-                    </div>
+                <div class="col-lg-2 col-md-2">
+   
+                                <button class="btn btn-secondary mb-3" id="stream">Add New Stream</button>
+
+                </div>
+
+                <div class="col-lg-2 col-md-2">
+
+                                <button class="btn btn-secondary mb-3" id="course">Add New Course</button>
+ 
+                </div>
+                 <div class="col-lg-2 col-md-2">
+
+                                <button class="btn btn-secondary mb-3" id="country">Add New country</button>
+ 
+                </div>
+                 <div class="col-lg-1 col-md-1">
+
+                                <button class="btn btn-secondary mb-3" id="state">Add New state</button>
+ 
+                </div>
+                 <div class="col-lg-2 col-md-2">
+
+                                <button class="btn btn-secondary mb-3" id="place">Add New Place</button>
+ 
                 </div>
 
 </div>
 
 
-                <div class="row">
+                <div class="row" id="university_v">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
 
                                 <div class="d-flex mb-2">
                                     <div>
-                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Result</h3>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add University</h3>
                                     </div>
-                                 </div>
 
-                                <input class="mb-2 float-right mr-2 btn btn-link" type="button" onclick="printDiv('mainresult')" value="Print" style="" />
-                                    
-                                 <div class="table-responsive table-hover" id="mainresult">
-                                 	<center><h3 id="heading"></h3></center>
-                                    <table class="table" id="mainresulttbody">
-                                        
-                                    </table>
-                                </div>
+                                 </div>
+                                 
+                                 <form class="form-horizontal" name="universityform" id="universityform">
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <input type="text" placeholder="Enter University Name" name="university" class="form-control form-control-line" id="uni" required>
+                                        </div>
+                                        <div class="col-md-6 float-left">
+                                            <input type="submit" name="" value="Add" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                 </form>
+                                
 
 
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+             <div class="row" id="course_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add course</h3>
+                                    </div>
+
+                                 </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+           
+
+             <div class="row" id="stream_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add Stream</h3>
+                                    </div>
+
+                                 </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+             <div class="row" id="country_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add Country</h3>
+                                    </div>
+
+                                 </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" id="state_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add State</h3>
+                                    </div>
+
+                                 </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+             <div class="row" id="place_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add Place</h3>
+                                    </div>
+
+                                 </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" id="college_v">
+                    <div class="col-lg-12 col-md-12">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="d-flex mb-2">
+                                    <div>
+                                        <h3 class="card-title m-b-5"><span class="lstick"></span>Add College</h3>
+                                    </div>
+                                </div>
+                                    <form class="form-horizontal" name="universityform" id="collegeform">
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <input type="text" placeholder="Enter College Name" name="college" class="form-control form-control-line" id="clg" required="">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <select class="form-control" name="university" id="university_f">
+                                                    <option value="" selected>University</option>
+                                                    <?php foreach ($university as $uni): ?>
+                                                        <option value="<?php echo $uni['university_id']; ?>"><?php echo $uni['university_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-4 float-left mb-3">
+                                           <select class="form-control" name="country" id="country_f">
+                                                    <option value="" selected>Country</option>
+                                                    <?php foreach ($country as $ct): ?>
+                                                        <option value="<?php echo $ct['country_id']; ?>"><?php echo $ct['country_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                        <div class="form-group">
+                                        <div class="col-md-4 float-left mb-3">
+                                           <select class="form-control" name="state" id="state_f">
+                                                    <option value="" selected>State</option>
+                                                    <?php foreach ($streams as $stream): ?>
+                                                        <option value="<?php echo $stream['stream_id']; ?>"><?php echo $stream['stream_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                        <div class="form-group">
+                                        <div class="col-md-4 float-left mb-3">
+                                           <select class="form-control" name="district" id="district_f">
+                                                    <option value="" selected>District</option>
+                                                    <?php foreach ($streams as $stream): ?>
+                                                        <option value="<?php echo $stream['stream_id']; ?>"><?php echo $stream['stream_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group float-left">
+                                        <div class="col-md-6">
+                                            <input type="submit" name="" value="Add" class="btn btn-primary">
+                                        </div>
+                                    </div>
+                                 </form>
+
+                                 
+
+
+                        </div>
+                    </div>
+                </div>
             </div>
 
   
@@ -63,73 +249,167 @@
 
             <script type="text/javascript">
             	$(document).ready(function(){
- 
-				 $('#college').typeahead({
-				  source: function(query, result)
-				  {
-				   $.ajax({
-				    url:"<?php echo base_url();?>college/autocomplete",
-				    method:"POST",
-				    data:{query:query},
-				    dataType:"json",
-				    success:function(data)
-				    {
-				     result($.map(data, function(item, key){
-				      return item;
-				     }));
-				     
-				    }
-				   })
-				  }
-				 });
+                    $("#university_v").hide();
+                    $("#college_v").hide();
+                    $("#course_v").hide();
+                    $("#stream_v").hide();
+                    $("#country_v").hide();
+                    $("#state_v").hide();
+                    $("#place_v").hide();
 
 
-				 $('#mainresult').hide();
+                    $("#university").click(function() {
+                        $("#university_v").show();
+                        $("#college_v").hide();
+                        $("#course_v").hide();
+                        $("#stream_v").hide();
+                        $("#country_v").hide();
+                        $("#state_v").hide();
+                        $("#place_v").hide();
+                        var x = $("#university_v").position();
+                        window.scrollTo(x.left, x.top);
+                    });
+                    $("#college").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").show();
+                        $("#course_v").hide();
+                        $("#stream_v").hide();
+                        $("#country_v").hide();
+                        $("#state_v").hide();
+                        $("#place_v").hide();
+                        var x = $("#college").position();
+                        window.scrollTo(x.left, x.top);
+                    });
+                    $("#course").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").hide();
+                        $("#course_v").show();
+                        $("#stream_v").hide();
+                        $("#country_v").hide();
+                        $("#state_v").hide();
+                        $("#place_v").hide();
+                        var x = $("#course").position();
+                        window.scrollTo(x.left, x.top);
+                    });
+                    $("#stream").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").hide();
+                        $("#course_v").hide();
+                        $("#stream_v").show();
+                        $("#country_v").hide();
+                        $("#state_v").hide();
+                        $("#place_v").hide();
+                        var x = $("#stream").position();
+                        window.scrollTo(x.left, x.top);
+                    });
+                    $("#country").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").hide();
+                        $("#course_v").hide();
+                        $("#stream_v").hide();
+                        $("#country_v").show();
+                        $("#state_v").hide();
+                        $("#place_v").hide();
+                        var x = $("#country").position();
+                        window.scrollTo(x.left, x.top);
+                    });	
+                     $("#state").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").hide();
+                        $("#course_v").hide();
+                        $("#stream_v").hide();
+                        $("#country_v").hide();
+                        $("#state_v").show();
+                        $("#place_v").hide();
+                        var x = $("#state").position();
+                        window.scrollTo(x.left, x.top);
+                    });	
+                     $("#place").click(function() {
+                        $("#university_v").hide();
+                        $("#college_v").hide();
+                        $("#course_v").hide();
+                        $("#stream_v").hide();
+                        $("#country_v").hide();
+                        $("#state_v").hide();
+                        $("#place_v").show();
+                        var x = $("#place").position();
+                        window.scrollTo(x.left, x.top);
+                    });
+
+                    $("#universityform").submit(function(e) {
+                        e.preventDefault();
+                        if (confirm("Add University")) {
+                            var form = $(this);
+                            $.ajax({
+                                   type: "POST",
+                                   url: "<?php echo base_url();?>adddata/add_university",
+                                   data: form.serialize(), // serializes the form's elements.
+                                   success: function(data)
+                                   {
+                                        alert(data);
+                                        $("input[type=text], textarea").val("");
+                                   }
+                                 });
+                        }
+                    }); 
 
 
-            $("#mainform").submit(function(e) {
+                     $("#collegeform").submit(function(e) {
+                        e.preventDefault();
+                        if (confirm("Add College")) {
+                            var form = $(this);
+                            $.ajax({
+                                   type: "POST",
+                                   url: "<?php echo base_url();?>adddata/add_college",
+                                   data: form.serialize(), // serializes the form's elements.
+                                   success: function(data)
+                                   {
+                                        alert(data);
+                                        $("input[type=text], textarea").val("");
+                                   }
+                                 });
+                        }
+                    });
 
 
+                    $('#country_f').change(function(){
+                        var country_id = $('#country_f').val();
+                        if(country_id != '')
+                        {
+                            $.ajax({
+                                url:"<?php echo base_url();?>adddata/fetch_state",
+                                method:"POST",
+                                data:{country_id:country_id},
+                                success:function(data)
+                                {
+                                    $('#state_f').html(data);
+                                }
+                            })
+                        }
+                        if(country_id == ''){
+                             $('#state_f').html("<option value='' selected>District</option>");
+                        }
+                    });
 
-                e.preventDefault(); // avoid to execute the actual submit of the form.
+                    $('#state_f').change(function(){
+                        var state_id = $('#state_f').val();
+                        if(state_id != '')
+                        {
+                            $.ajax({
+                                url:"<?php echo base_url();?>adddata/fetch_district",
+                                method:"POST",
+                                data:{state_id:state_id},
+                                success:function(data)
+                                {
+                                    $('#district_f').html(data);
+                                }
+                            })
+                        }
+                        if(country_id == ''){
+                             $('#district_f').html("<option value='' selected>District</option>");
+                        }
+                    });
 
-                var form = $(this);
-                // alert(form.serialize());
-                $.ajax({
-                       type: "POST",
-                       url: "<?php echo base_url();?>college/fetch_details",
-                       data: form.serialize(), // serializes the form's elements.
-                       success: function(data)
-                       {
-                            $('#mainresulttbody').html(data);
-                            $('#heading').html($('#college').val());
-                            $('#mainresult').show();
-                       }
-                     });
 
-                });
-
-
-				 
 				});
             </script>
-
-             <script type="text/javascript">
-            function printDiv(divName) {
-             var printContents = document.getElementById(divName).innerHTML;
-
-             var originalContents = document.body.innerHTML;
-
-             document.body.innerHTML = printContents;
-
-            var y = document.getElementsByClassName("trow");
-                var i;
-                for (i = 0; i < y.length; i++) {
-                  y[i].style.width = "40%";
-                }
-
-             window.print();
-
-             document.body.innerHTML = originalContents;
-            }
-        </script>

@@ -1,11 +1,11 @@
-
+<!-- 
                 <div class="row page-titles">
                     <div class="col-md-5 align-self-center">
                         <h3 class="text-themecolor">Home</h3>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="row">
+                <div class="row" id="topSection">
                     <div class="col-lg-12 col-md-12">
                         <div class="card">
                             <div class="card-body">
@@ -175,7 +175,6 @@
                 e.preventDefault(); // avoid to execute the actual submit of the form.
 
                 var form = $(this);
-                // alert(form.serialize());
                 $.ajax({
                        type: "POST",
                        url: "<?php echo base_url();?>/fetch_details",
