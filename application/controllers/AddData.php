@@ -11,6 +11,7 @@
 		public function index(){
 			$data['university'] = $this->add_model->get_university();
 			$data['country'] = $this->add_model->get_country();
+			$data['streams'] = $this->main_model->get_stream();
 
 			$this->load->view('templates/header');
 			$this->load->view('pages/add',$data);
@@ -22,6 +23,11 @@
 			// echo $this->input->post('university');
 		}
 
+		function add_stream(){
+			echo $this->add_model->addstream($this->input->post('stream'));
+			// echo $this->input->post('university');
+		}
+
 		function add_college(){
 			if($this->input->post('college') != '' && $this->input->post('district') != '' && $this->input->post('university') != ''){
 				echo $this->add_model->addcollege($this->input->post('college'),$this->input->post('district'),$this->input->post('university'));
@@ -29,6 +35,23 @@
 			else{
 				echo "Please fill all the fields";
 			}
+		}
+		function add_course(){
+			if($this->input->post('course') != '' && $this->input->post('stream') != ''){
+				echo $this->add_model->addcourse($this->input->post('course'),$this->input->post('stream'),$this->input->post('duration'),$this->input->post('qualification'),$this->input->post('after'));
+			}
+			else{
+				echo "Please fill all the fields";
+			}
+		}
+
+		function add_col_course(){
+			// if($this->input->post('course') != '' && $this->input->post('stream') != ''){
+			// 	echo $this->add_model->addcourse($this->input->post('course'),$this->input->post('stream'),$this->input->post('duration'),$this->input->post('qualification'),$this->input->post('after'));
+			// }
+			// else{
+				echo "Please fill all the fields";
+			// }
 		}
 
 		function fetch_state(){

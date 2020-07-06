@@ -74,13 +74,16 @@
 				    dataType:"json",
 				    success:function(data)
 				    {
-				     result($.map(data, function(item, key){
+				     result($.map(data, function(item){
 				      return item;
+
 				     }));
 				     
 				    }
-				   })
-				  }
+				   });
+				  },
+                  minLength: 2,
+                  autoFocus :true
 				 });
 
 

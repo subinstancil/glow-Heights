@@ -11,10 +11,30 @@ class Add_model extends CI_Model{
 	 	}
 	 }
 
+	  function addstream($name){
+	 	$data = array('stream_name'=>$name);
+	 	if($this->db->insert('streams',$data)){
+	 		return "Stream added";
+	 	}
+	 	else{
+	 		echo "error";
+	 	}
+	 }
+
 	 function addcollege($name,$district,$university){
 	 	$data = array('college_name'=>$name,'district_id'=>$district,'university_id'=>$university);
 	 	if($this->db->insert('college',$data)){
 	 		return "College added";
+	 	}
+	 	else{
+	 		echo "error";
+	 	}
+	 }
+
+	 function addcourse($course,$stream,$duration,$qualification,$after){
+	 	$data = array('course_name'=>$course,'stream_id'=>$stream,'duration'=>$duration,'qualification'=>$qualification,'after'=>$after);
+	 	if($this->db->insert('courses',$data)){
+	 		return "Course Added";
 	 	}
 	 	else{
 	 		echo "error";
