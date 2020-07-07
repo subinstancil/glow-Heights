@@ -7,7 +7,36 @@ class Add_model extends CI_Model{
 	 		return "University added";
 	 	}
 	 	else{
-	 		echo "error";
+	 		return "error";
+	 	}
+	 }
+	  function addcountry($name){
+	 	$data = array('country_name'=>$name);
+	 	if($this->db->insert('country',$data)){
+	 		return "Country added";
+	 	}
+	 	else{
+	 		return "error";
+	 	}
+	 }
+
+	 function addstate($state,$country){
+	 	$data = array('country_id'=>$country,'state_name'=>$state);
+	 	if($this->db->insert('state',$data)){
+	 		return "State added";
+	 	}
+	 	else{
+	 		return "error";
+	 	}
+	 }
+
+	 function adddistrict($district,$state){
+	 	$data = array('district_name'=>$district,'state_id'=>$state);
+	 	if($this->db->insert('district',$data)){
+	 		return "Place added";
+	 	}
+	 	else{
+	 		return "error";
 	 	}
 	 }
 
@@ -27,7 +56,7 @@ class Add_model extends CI_Model{
 	 		return "College added";
 	 	}
 	 	else{
-	 		echo "error";
+	 		return "error";
 	 	}
 	 }
 	 function addcolcourse($college,$course,$fees){

@@ -190,6 +190,17 @@
 
                                  </div>
 
+                                 <form class="form-horizontal" name="countryform" id="countryform">
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <input type="text" placeholder="Enter Country Name" name="country" class="form-control form-control-line" required>
+                                        </div>
+                                        <div class="col-md-6 float-left">
+                                            <input type="submit" name="" value="Add Country" class="btn btn-primary btn-block">
+                                        </div>
+                                    </div>
+                                 </form>
+
 
                         </div>
                     </div>
@@ -209,6 +220,31 @@
 
                                  </div>
 
+                                 <form class="form-horizontal" name="stateform" id="stateform">
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <input type="text" placeholder="Enter State Name" name="state" class="form-control form-control-line" required="">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <select class="form-control" name="country" required>
+                                                    <option value="" selected>Country</option>
+                                                    <?php foreach ($country as $ct): ?>
+                                                        <option value="<?php echo $ct['country_id']; ?>"><?php echo $ct['country_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-12 float-left text-center">
+                                            <input type="submit" name="" value="Add State" class="btn btn-primary btn-block">
+                                        </div>
+                                    </div>
+                                </form>
+
 
                         </div>
                     </div>
@@ -227,6 +263,38 @@
                                     </div>
 
                                  </div>
+
+                                 <form class="form-horizontal" name="districtform" id="districtform">
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                            <input type="text" placeholder="Enter Place Name" name="district" class="form-control form-control-line" required="">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                           <select class="form-control" name="country" id="country_xf" required="">
+                                                    <option value="" selected>Country</option>
+                                                    <?php foreach ($country as $ct): ?>
+                                                        <option value="<?php echo $ct['country_id']; ?>"><?php echo $ct['country_name']; ?></option>
+                                                    <?php endforeach ?>
+                                                </select>
+                                        </div>
+                                    </div>
+                                        <div class="form-group">
+                                        <div class="col-md-6 float-left mb-3">
+                                           <select class="form-control" name="state" id="state_xf" required>
+                                                    <option value="" selected>State</option>
+                                                   
+                                                </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 float-left text-center">
+                                            <input type="submit" name="" value="Add Place" class="btn btn-primary btn-block">
+                                        </div>
+                                    </div>
+                                </form>
 
 
                         </div>
@@ -493,6 +561,56 @@
                         }
                     });
 
+                    $("#countryform").submit(function(e) {
+                        e.preventDefault();
+                        if (confirm("Add Country")) {
+                            var form = $(this);
+                            $.ajax({
+                                   type: "POST",
+                                   url: "<?php echo base_url();?>adddata/add_country",
+                                   data: form.serialize(), // serializes the form's elements.
+                                   success: function(data)
+                                   {
+                                        alert(data);
+                                        $("input[type=text], textarea").val("");
+                                   }
+                                 });
+                        }
+                    });
+                     $("#stateform").submit(function(e) {
+                        e.preventDefault();
+                        if (confirm("Add State")) {
+                            var form = $(this);
+                            $.ajax({
+                                   type: "POST",
+                                   url: "<?php echo base_url();?>adddata/add_state",
+                                   data: form.serialize(), // serializes the form's elements.
+                                   success: function(data)
+                                   {
+                                        alert(data);
+                                        $("input[type=text],select, textarea").val("");
+                                   }
+                                 });
+                        }
+                    });
+
+                     $("#districtform").submit(function(e) {
+                        e.preventDefault();
+                        if (confirm("Add Place")) {
+                            var form = $(this);
+                            $.ajax({
+                                   type: "POST",
+                                   url: "<?php echo base_url();?>adddata/add_district",
+                                   data: form.serialize(), // serializes the form's elements.
+                                   success: function(data)
+                                   {
+                                        alert(data);
+                                        $("input[type=text], select, textarea").val("");
+                                   }
+                                 });
+                        }
+                    });
+
 
                     $("#streamform").submit(function(e) {
                         e.preventDefault();
@@ -580,6 +698,25 @@
                         }
                         if(country_id == ''){
                              $('#state_f').html("<option value='' selected>State</option>");
+                        }
+                    });
+
+                    $('#country_xf').change(function(){
+                        var country_id = $('#country_xf').val();
+                        if(country_id != '')
+                        {
+                            $.ajax({
+                                url:"<?php echo base_url();?>adddata/fetch_state",
+                                method:"POST",
+                                data:{country_id:country_id},
+                                success:function(data)
+                                {
+                                    $('#state_xf').html(data);
+                                }
+                            })
+                        }
+                        if(country_id == ''){
+                             $('#state_xf').html("<option value='' selected>State</option>");
                         }
                     });
 

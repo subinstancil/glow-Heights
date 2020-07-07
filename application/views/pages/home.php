@@ -65,13 +65,13 @@
 
 
                                         </div>
-                                        <br><br><br> <center class="float-left col-sm-12">
+                                        <br><br><br>
                                         <div class="form-group">
-                                            <div class="col-sm-12">
-                                                <button class="btn btn-success">submit</button>
+                                            <div class="col-sm-12 float-left">
+                                                <button class="btn btn-success btn-block">submit</button>
                                             </div>
                                         </div>
-                                        </center>
+                                        
                                     </form>
 
 

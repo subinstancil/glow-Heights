@@ -17,7 +17,7 @@
                                  			<input type="text" placeholder="Enter College Name" name="college" class="form-control form-control-line" id="college">
                                  		</div>
                                  		<div class="col-md-6 float-left">
-                                 			<input type="submit" name="" value="Search" class="btn btn-primary">
+                                 			<input type="submit" name="" value="Search" class="btn btn-primary btn-block">
                                  		</div>
                                  	</div>
                                  </form>
