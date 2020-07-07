@@ -437,6 +437,9 @@
 
             <script type="text/javascript">
             	$(document).ready(function(){
+                    $(document).on('focus', ':input', function() {
+    $(this).attr('autocomplete', 'off');
+  });
                     $("#university_v").hide();
                     $("#college_v").hide();
                     $("#course_v").hide();

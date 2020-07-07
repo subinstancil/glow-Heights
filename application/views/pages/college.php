@@ -14,7 +14,7 @@
                                  <form class="form-horizontal" name="mainform" id="mainform">
                                  	<div class="form-group">
                                  		<div class="col-md-6 auto-widget float-left mb-3">
-                                 			<input type="text" placeholder="Enter College Name" name="college" class="form-control form-control-line" id="college">
+                                 			<input type="text" placeholder="Enter College Name" name="college" class="form-control form-control-line" id="college" autocomplete="off">
                                  		</div>
                                  		<div class="col-md-6 float-left">
                                  			<input type="submit" name="" value="Search" class="btn btn-primary btn-block">
