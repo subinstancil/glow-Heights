@@ -59,8 +59,8 @@ class Add_model extends CI_Model{
 	 		return "error";
 	 	}
 	 }
-	 function addcolcourse($college,$course,$fees){
-	 	$sql='INSERT INTO `college_courses`(`college_id`, `course_id`, `fees`) VALUES ((select college_id from college where college_name = "'.$college.'"),'.$course.',"'.$fees.'")';
+	 function addcolcourse($college,$course,$fees,$total_fees){
+	 	$sql='INSERT INTO `college_courses`(`college_id`, `course_id`, `fees`, `total_fees`) VALUES ((select college_id from college where college_name = "'.$college.'"),'.$course.',"'.$fees.'",'.$total_fees.')';
 	 	// $data = array('college_name'=>$name,'district_id'=>$district,'university_id'=>$university);
 	 	if($this->db->query($sql)){
 	 		return "Course added";

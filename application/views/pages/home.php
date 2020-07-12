@@ -46,25 +46,45 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-3 float-left mb-3 mb-md-0">
-                                                <select class="form-control" name="state" id="state">
-                                                    <option value="" selected>State</option>
-                                                    <?php foreach ($state as $pl): ?>
-                                                        <option value="<?php echo $pl['state_id']; ?>"><?php echo $pl['state_name']; ?></option>
+                                            <div class="col-md-2 float-left mb-3 mb-md-0">
+                                                <select class="form-control" name="state" id="country">
+                                                    <option value="" selected>Country</option>
+                                                    <?php foreach ($country as $pl): ?>
+                                                        <option value="<?php echo $pl['country_id']; ?>"><?php echo $pl['country_name']; ?></option>
                                                     <?php endforeach ?>
                                                 </select>
                                             </div>
 
-                                            <div class="col-md-3 float-left mb-3 mb-md-0">
+                                            <div class="col-md-2 float-left mb-3 mb-md-0">
+                                                <select class="form-control" name="state" id="state">
+                                                    <option value="" selected>State</option>
+                                                    
+                                                </select>
+                                            </div>
+
+                                             <div class="col-md-2 float-left mb-md-0">
                                                 <select class="form-control" name="place" id="place">
                                                     <option value="" selected>Place</option>
     
                                                 </select>
                                             </div>
 
-
-
                                         </div>
+                                        <div class="form-group float-right">
+                                            <div class="col-md-8 float-right mb-md-0">
+
+                                                <div class="col-md-6 float-left px-xs-0">
+                                                    <label></label>
+                                                    <input type="number" placeholder="Fees From" name="from" class="form-control form-control-line">
+                                                </div>
+
+                                                 <div class="col-md-6 float-left pr-md-0">
+                                                    <label></label>
+                                                    <input type="number" placeholder="Fees To" name="to" class="form-control form-control-line">
+                                                </div>
+                                            </div>    
+                                        </div>
+
                                         <br><br><br>
                                         <div class="form-group">
                                             <div class="col-sm-12 float-left">
@@ -102,9 +122,12 @@
                                                 <th>College Name</th>
                                                 <th>Course</th>
                                                 <th class="trow">Fees</th>
+                                                <th>Total Fees</th>
                                                 <th>Duration</th>
                                                 <th>Qualification</th>
                                                 <th>University</th>
+                                                <th>After</th>
+                                                <th>Place</th>
                                             </tr>
                                         </thead>
                                         <tbody id="mainresulttbody">
@@ -164,6 +187,25 @@
                 }
             });
 
+            $('#country').change(function(){
+                var country_id = $('#country').val();
+                if(country_id != '')
+                {
+                    $.ajax({
+                        url:"<?php echo base_url();?>/fetch_con",
+                        method:"POST",
+                        data:{country_id:country_id},
+                        success:function(data)
+                        {
+                            $('#state').html(data);
+                        }
+                    })
+                }
+                if(country_id == ''){
+                     $('#state').html("<option value='' selected>State</option>");
+                }
+            });
+
             
 
 
@@ -183,6 +225,8 @@
                        {
                             $('#mainresulttbody').html(data);
                             $('#mainresult').show();
+                            var x = $("#mainresulttbody").position();
+                            window.scrollTo(x.left, x.top);
                        }
                      });
 

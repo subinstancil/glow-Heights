@@ -416,6 +416,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <div class="col-md-6 auto-widget float-left mb-3">
+                                            <input type="number" placeholder="Enter Total Fees" name="total_fees" class="form-control form-control-line" id="total_fees_v_f" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
                                         <div class="col-md-6 float-left text-center">
                                             <input type="submit" name="" value="Add course" class="btn btn-primary btn-block">
                                         </div>

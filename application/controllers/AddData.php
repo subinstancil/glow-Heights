@@ -61,8 +61,8 @@
 		}
 
 		function add_col_course(){
-			if($this->input->post('college') != '' && $this->input->post('course') != '' && $this->input->post('fees') != ''){
-				echo $this->add_model->addcolcourse($this->input->post('college'),$this->input->post('course'),$this->input->post('fees'));
+			if($this->input->post('college') != '' && $this->input->post('course') != '' && $this->input->post('fees') != '' && $this->input->post('total_fees') != ''){
+				echo $this->add_model->addcolcourse($this->input->post('college'),$this->input->post('course'),$this->input->post('fees'),$this->input->post('total_fees'));
 			}
 			else{
 				echo "Please fill all the fields";
