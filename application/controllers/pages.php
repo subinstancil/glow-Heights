@@ -72,6 +72,20 @@
 					echo $this->main_model->get_college($this->input->post('course'),$this->input->post('place'));
 				}
 
+				elseif($this->input->post('course') == '' && $this->input->post('state') != '' && $this->input->post('stream') == '' && $this->input->post('from') == '' && $this->input->post('to') == '' && $this->input->post('place') == '')
+				{
+					echo $this->main_model->get_college_state($this->input->post('state'));
+				}
+				elseif($this->input->post('course') == '' && $this->input->post('state') != '' && $this->input->post('stream') != '' && $this->input->post('from') == '' && $this->input->post('to') == '' && $this->input->post('place') == '') 
+				{
+					echo $this->main_model->get_college_stream_state($this->input->post('state'),$this->input->post('stream'));
+				}
+
+				elseif($this->input->post('course') != '' && $this->input->post('state') != '' && $this->input->post('stream') != '' && $this->input->post('from') == '' && $this->input->post('to') == '' && $this->input->post('place') == '')
+				{
+					echo $this->main_model->get_college_course_state($this->input->post('course'),$this->input->post('state'));
+				}
+
 				elseif($this->input->post('course') != '' && $this->input->post('place') == '' && $this->input->post('stream') != '' && $this->input->post('from') == '' && $this->input->post('to') == '')
 				{
 					echo $this->main_model->get_college_course($this->input->post('course'));
@@ -102,6 +116,19 @@
 				elseif($this->input->post('stream') != '' && $this->input->post('place') == '' && $this->input->post('course') == '')
 				{
 					echo $this->main_model->get_college_stream_r($this->input->post('stream'),$this->input->post('from'),$this->input->post('to'));
+				}
+				elseif($this->input->post('course') == '' && $this->input->post('state') != '' && $this->input->post('stream') == '' && $this->input->post('place') == '')
+				{
+					echo $this->main_model->get_college_state_r($this->input->post('state'),$this->input->post('from'),$this->input->post('to'));
+				}
+				elseif($this->input->post('course') == '' && $this->input->post('state') != '' && $this->input->post('stream') != '' && $this->input->post('place') == '') 
+				{
+					echo $this->main_model->get_college_stream_state_r($this->input->post('state'),$this->input->post('stream'),$this->input->post('from'),$this->input->post('to'));
+				}
+
+				elseif($this->input->post('course') != '' && $this->input->post('state') != '' && $this->input->post('stream') != '' && $this->input->post('place') == '')
+				{
+					echo $this->main_model->get_college_course_state_r($this->input->post('course'),$this->input->post('state'),$this->input->post('from'),$this->input->post('to'));
 				}
 
 				else{
