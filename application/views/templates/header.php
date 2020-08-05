@@ -136,6 +136,7 @@
                         <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>pages" aria-expanded="false"><i class="mdi mdi-home"></i><span class="hide-menu">Home</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>college" aria-expanded="false"><i class="mdi mdi-school"></i><span class="hide-menu">College Search</span></a></li>
                         <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>add" aria-expanded="false"><i class="mdi mdi-lead-pencil"></i><span class="hide-menu">Add Details</span></a></li>
+                         <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>download" aria-expanded="false"><i class="mdi mdi-cloud-download"></i><span class="hide-menu">Download</span></a></li>
                          <li> <a class="waves-effect waves-dark" href="<?php echo base_url();?>about" aria-expanded="false"><i class="mdi mdi-information-outline"></i><span class="hide-menu">About</span></a></li>
                         
                     </ul>

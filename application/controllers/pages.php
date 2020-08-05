@@ -29,6 +29,13 @@
 			$this->load->view('templates/footer');
 		}
 
+		public function download(){
+
+			$this->load->view('templates/header');
+			$this->load->view('pages/download');
+			$this->load->view('templates/footer');
+		}
+
 		public function fetch_course(){
 			if($this->input->post('stream_id'))
 			{
